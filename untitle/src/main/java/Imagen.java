@@ -24,6 +24,13 @@ import java.beans.PropertyChangeSupport;
                 }
             }
         }
+        public void imagenBlanca(){
+            for (int i = 0; i < ancho; i++) {
+                for (int j = 0; j < alto; j++) {
+                    pixeles[i][j] = 0x00FFFFFF;
+                }
+            }
+        }
 
         public void imagen4x4() {
             // Primer cuadrado, parte superior izquierda BLACNO

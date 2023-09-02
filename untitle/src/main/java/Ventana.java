@@ -9,7 +9,8 @@ import java.awt.*;
             this.getContentPane().setLayout(new BorderLayout());
 
             modelo = new Imagen(400,400);
-            modelo.imagen4x4();
+            //modelo.imagen4x4();
+            modelo.imagenBlanca();
 
             Panel panel = new Panel(modelo);
             modelo.addObserver(panel);
