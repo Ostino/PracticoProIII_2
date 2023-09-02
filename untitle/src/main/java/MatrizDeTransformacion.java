@@ -1,6 +1,9 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-    public class MatrizDeTransformacion {
+public class MatrizDeTransformacion {
         private double[][] matriz;
+    private static Logger logger = LogManager.getLogger(MatrizDeTransformacion.class);
 
         public MatrizDeTransformacion() {
             matriz = new double[3][3];
@@ -44,11 +47,14 @@
             matriz[0][1] = Math.sin(r);
             matriz[1][0] = -Math.sin(r);
             matriz[1][1] = Math.cos(r);
+            //System.out.println("La imagen se rotó :"+grados+" grados");
+            logger.info("La imagen se rotó :"+r+"º");
         }
 
         public void traslacion(int x, int y) {
             matriz[0][2] = (double)x;
             matriz[1][2] = (double)y;
+            logger.info("La imagen se movio");
         }
     }
 
