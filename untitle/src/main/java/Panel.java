@@ -13,10 +13,9 @@ import java.beans.PropertyChangeListener;
             modelo = img;
             this.addMouseMotionListener(this);
         }
-
         @Override
         public Dimension getPreferredSize() {
-            return new Dimension(800,600);
+            return new Dimension(600,600);
         }
 
         @Override

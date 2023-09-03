@@ -72,11 +72,23 @@ import java.beans.PropertyChangeSupport;
                     nuevosPixeles[i/2][j/2] = pixeles[i][j];
                 }
             }
-
             pixeles = nuevosPixeles;
             ancho = ancho/t;
             alto = alto /t;
+            observado.firePropertyChange("IMAGEN",true, false);
+        }
+        public void Agrandar(int t) {
+            int[][] nuevosPixeles = new int[ancho*t][alto*t];
 
+            for (int i = 0; i < ancho*t; i++) {
+                for (int j = 0; j < alto*t; j++) {
+                        nuevosPixeles[i][j] = pixeles[i/t ][j/t];
+
+                }
+            }
+            pixeles = nuevosPixeles;
+            ancho = ancho*t;
+            alto = alto *t;
             observado.firePropertyChange("IMAGEN",true, false);
         }
 
