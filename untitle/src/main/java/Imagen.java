@@ -31,35 +31,6 @@ import java.beans.PropertyChangeSupport;
                 }
             }
         }
-
-        public void imagen4x4() {
-            // Primer cuadrado, parte superior izquierda BLACNO
-            for (int i = 0; i < ancho/2; i++) {
-                for (int j = 0; j < alto/2; j++) {
-                    pixeles[i][j] = 0x00FFFFFF;
-                }
-            }
-            // Segundo cuadrado, parte superior derecha ROJO
-            for (int i = ancho/2; i < ancho; i++) {
-                for (int j = 0; j < alto/2; j++) {
-                    pixeles[i][j] = 0x00FF0000;
-                }
-            }
-
-            // 3er cuadrado, parte inferior izquierda VERDE
-            for (int i = 0; i < ancho/2; i++) {
-                for (int j = alto/2; j < alto; j++) {
-                    pixeles[i][j] = 0x0000FF00;
-                }
-            }
-            // 4to cuadrado, parte inferior derecha AZUL
-            for (int i = ancho/2; i < ancho; i++) {
-                for (int j = alto/2; j < alto; j++) {
-                    pixeles[i][j] = 0x000000FF;
-                }
-            }
-        }
-
         public void addObserver(PropertyChangeListener listener) {
             observado.addPropertyChangeListener(listener);
         }
@@ -79,11 +50,9 @@ import java.beans.PropertyChangeSupport;
         }
         public void Agrandar(int t) {
             int[][] nuevosPixeles = new int[ancho*t][alto*t];
-
             for (int i = 0; i < ancho*t; i++) {
                 for (int j = 0; j < alto*t; j++) {
                         nuevosPixeles[i][j] = pixeles[i/t ][j/t];
-
                 }
             }
             pixeles = nuevosPixeles;
