@@ -7,12 +7,14 @@ import java.beans.PropertyChangeSupport;
         private int ancho;
         private int[][] pixeles;
         private PropertyChangeSupport observado;
+        private boolean pintable;
 
         public Imagen(int w, int h) {
             ancho = w;
             alto = h;
             pixeles = new int[ancho][alto];
             observado = new PropertyChangeSupport(this);
+            pintable = true;
         }
 
         @Override
@@ -48,6 +50,7 @@ import java.beans.PropertyChangeSupport;
             alto = alto /t;
             observado.firePropertyChange("IMAGEN",true, false);
         }
+
         public void Agrandar(int t) {
             int[][] nuevosPixeles = new int[ancho*t][alto*t];
             for (int i = 0; i < ancho*t; i++) {
@@ -105,4 +108,12 @@ import java.beans.PropertyChangeSupport;
             }
             observado.firePropertyChange("IMAGEN", true, false);
         }
-}
+
+        public boolean isPintable() {
+            return pintable;
+        }
+
+        public void setPintable(boolean pintable) {
+            this.pintable = pintable;
+        }
+    }

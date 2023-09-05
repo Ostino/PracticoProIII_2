@@ -32,6 +32,7 @@ import java.awt.*;
             btn = new JButton("Matriz de Transformacion");
             btn.addActionListener(e -> {
                 btnTransformacion_clicked();
+
             });
             this.getContentPane().add(btn, BorderLayout.SOUTH);
              btn = new JButton("Agrandar");
@@ -48,7 +49,7 @@ import java.awt.*;
 
 
         private void btnTransformacion_clicked() {
-
+            modelo.setPintable(false);
             MatrizDeTransformacion m = new MatrizDeTransformacion();
             m.traslacion(modelo.getAncho(),0);
             m.rotacion(-90);

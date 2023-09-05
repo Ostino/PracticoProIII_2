@@ -32,11 +32,13 @@ import java.beans.PropertyChangeListener;
 
         @Override
         public void mouseDragged(MouseEvent e) {
-            modelo.punto(e.getX(), e.getY(), 20);
+            if (modelo.isPintable() == true)
+                modelo.punto(e.getX(), e.getY(), 20);
         }
 
         @Override
         public void mouseMoved(MouseEvent e) {
 
         }
+
     }
