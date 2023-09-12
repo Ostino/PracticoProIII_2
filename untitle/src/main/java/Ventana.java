@@ -2,8 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
     public class Ventana extends JFrame {
-        JButton btnChico = new JButton("Achicar");
-        JButton btnCambio = new JButton("Cambio");
+
         private Imagen modelo;
 
         Panel panel = new Panel(modelo);
@@ -43,7 +42,7 @@ import java.awt.*;
 
 
             this.setVisible(true);
-            this.pack();
+            this.pack();  
 
         }
 

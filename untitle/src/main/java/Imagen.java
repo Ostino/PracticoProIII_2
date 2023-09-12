@@ -66,7 +66,6 @@ import java.beans.PropertyChangeSupport;
 
         public void aplicarMatriz(MatrizDeTransformacion m) {
             int[][] nuevosPixeles = new int[ancho][alto];
-
             for (int i = 0; i < ancho; i++) {
                 for (int j = 0; j < alto; j++) {
                     Vectores entrada = new Vectores(i,j);
